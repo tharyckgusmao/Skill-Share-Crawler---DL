@@ -15,6 +15,7 @@ Crawler with purpose to Download videos of the platform Skill Share, possibility
 ### Prerequisites
 
 ```
+  You need to authenticate at least once in the mobile app
 
   Configure the Gecko Driver : https://github.com/mozilla/geckodriver/releases
 
