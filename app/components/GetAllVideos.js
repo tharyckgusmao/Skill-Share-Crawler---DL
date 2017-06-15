@@ -61,11 +61,9 @@ module.exports = GetAllVideos = (fn)=>{
 
       eachOfSeries(arrayTmp, (el,key, cb2) =>{
 
-        if(key == 4){
-          cb2();
-
-
-        }else{
+       // if(key == 4){
+       //   cb2();
+        //}else{
 
 
 
@@ -126,7 +124,7 @@ module.exports = GetAllVideos = (fn)=>{
 
 
           })
-            };
+           // };
         }, (err, results)=> {
 
           cb();
