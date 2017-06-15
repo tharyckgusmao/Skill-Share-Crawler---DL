@@ -51,7 +51,7 @@ Enter password and password, wait for firefox to open, resolve Captcha or authen
 
 Choose the classes by the console or insert a specific id found in the video URL.
 
-www.skillshare.com/classes/<URL CLASSE>/<ID>
+www.skillshare.com/classes/URL CLASSE/ID
 
 ## Authors
 
