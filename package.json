@@ -1,0 +1,32 @@
+{
+  "name": "skillshare_dl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "patch": "node patchSelenium.js",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.4.1",
+    "browsermob-proxy": "^1.0.9",
+    "browsermob-proxy-api": "^0.4.0",
+    "chalk": "^1.1.3",
+    "chromedriver": "^2.12.0",
+    "clear": "0.0.1",
+    "clui": "^0.3.1",
+    "figlet": "^1.2.0",
+    "http-proxy": "^1.16.2",
+    "inquirer": "^3.0.6",
+    "phantom": "^4.0.3",
+    "request": "^2.81.0",
+    "request-debug": "^0.2.0",
+    "request-promise": "^4.2.1",
+    "selenium-webdriver": "^3.4.0"
+  },
+  "devDependencies": {
+    "browsermob": "0.0.2"
+  }
+}

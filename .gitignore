@@ -57,3 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
+videos/
+firefoxprofile/
+browsermob-proxy-2.1.4/
