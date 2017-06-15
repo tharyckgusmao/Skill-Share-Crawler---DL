@@ -1,6 +1,6 @@
 # Skill-Share-Crawler---DL
 
-![Example Crawler](https://github.com/tharyckgusmao/Skill-Share-Crawler---DL/imageexample.jpeg)
+![Example Crawler](https://github.com/tharyckgusmao/Skill-Share-Crawler---DL/blob/master/imageexample.jpeg)
 
 Crawler to Download videos from the skillshare platform.
 
