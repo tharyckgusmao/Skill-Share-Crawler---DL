@@ -18,13 +18,13 @@ module.exports = DlPerId = (data,sub=null,fn)=>{
     createFolder('videos');
     if(sub!=null){
 
-      createFolder(sub.replace(/\//g,''),true);
-      createFolder(data.title.replace(/\//g,''),true,sub.replace(/\//g,''));
+      createFolder(sub.replace(/[^a-zA-Z0-9 ]/g,""),true);
+      createFolder(data.title.replace(/[^a-zA-Z0-9 ]/g,""),true,sub.replace(/[^a-zA-Z0-9 ]/g,""));
 
 
 
     }else{
-      createFolder(data.title.replace(/\//g,''),true);
+      createFolder(data.title.replace(/[^a-zA-Z0-9 ]/g,""),true);
 
     }
 
@@ -59,10 +59,10 @@ module.exports = DlPerId = (data,sub=null,fn)=>{
 
 
           if(sub!=null){
-            fs.writeFileSync(`./videos/${sub.replace(/\//g,'')}/${data.title.replace(/\//g,'')}/tmp/` + el.title.replace(/\//g,'') + '.json',bd,'utf8');
+            fs.writeFileSync(`./videos/${sub.replace(/[^a-zA-Z0-9 ]/g,"")}/${data.title.replace(/[^a-zA-Z0-9 ]/g,"")}/tmp/` + el.title.replace(/[^a-zA-Z0-9 ]/g,"") + '.json',bd,'utf8');
 
           }else{
-            fs.writeFileSync(`./videos/${data.title}/tmp/` + el.title.replace(/\//g,'') + '.json',bd,'utf8');
+            fs.writeFileSync(`./videos/${data.title}/tmp/` + el.title.replace(/[^a-zA-Z0-9 ]/g,"") + '.json',bd,'utf8');
 
           }
 
@@ -75,9 +75,9 @@ module.exports = DlPerId = (data,sub=null,fn)=>{
           let out;
 
           if(sub!=null){
-           out = fs.createWriteStream(`./videos/${sub.replace(/\//g,'')}/${data.title.replace(/\//g,'')}/${key}-${el.title.replace(/\//g,'')}.mp4`);
+           out = fs.createWriteStream(`./videos/${sub.replace(/[^a-zA-Z0-9 ]/g,"")}/${data.title.replace(/[^a-zA-Z0-9 ]/g,"")}/${key}-${el.title.replace(/[^a-zA-Z0-9 ]/g,"")}.mp4`);
          }else{
-           out = fs.createWriteStream(`./videos/${data.title.replace(/\//g,'')}/${key}-${el.title.replace(/\//g,'')}.mp4`);
+           out = fs.createWriteStream(`./videos/${data.title.replace(/[^a-zA-Z0-9 ]/g,"")}/${key}-${el.title.replace(/[^a-zA-Z0-9 ]/g,"")}.mp4`);
          }
 
 
