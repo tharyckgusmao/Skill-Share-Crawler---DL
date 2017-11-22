@@ -62,7 +62,7 @@ module.exports = DlPerId = (data,sub=null,fn)=>{
             fs.writeFileSync(`./videos/${sub.replace(/[^a-zA-Z0-9 ]/g,"")}/${data.title.replace(/[^a-zA-Z0-9 ]/g,"")}/tmp/` + el.title.replace(/[^a-zA-Z0-9 ]/g,"") + '.json',bd,'utf8');
 
           }else{
-            fs.writeFileSync(`./videos/${data.title}/tmp/` + el.title.replace(/[^a-zA-Z0-9 ]/g,"") + '.json',bd,'utf8');
+            fs.writeFileSync(`./videos/${data.title.replace(/[^a-zA-Z0-9 ]/g,"")}/tmp/` + el.title.replace(/[^a-zA-Z0-9 ]/g,"") + '.json',bd,'utf8');
 
           }
 
