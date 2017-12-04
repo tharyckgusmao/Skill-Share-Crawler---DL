@@ -11,21 +11,20 @@ Progress = CLI.Progress;
 
 module.exports = DlPerId = (data,sub=null,fn)=>{
 
-  let statuses, statusTimer, titleVideo=data.title;
+  let statuses, statusTimer, titleVideo=data.title, isexist;
 
   let dlPerId = ()=>{
-
+    isexist = 0;
     createFolder('videos');
     if(sub!=null){
 
       createFolder(sub.replace(/[^a-zA-Z0-9 ]/g,""),true);
-      createFolder(data.title.replace(/[^a-zA-Z0-9 ]/g,""),true,sub.replace(/[^a-zA-Z0-9 ]/g,""));
+      isexist=createFolder(data.title.replace(/[^a-zA-Z0-9 ]/g,""),true,sub.replace(/[^a-zA-Z0-9 ]/g,""));
+   
 
-
-
+      
     }else{
-      createFolder(data.title.replace(/[^a-zA-Z0-9 ]/g,""),true);
-
+      isexist=createFolder(data.title.replace(/[^a-zA-Z0-9 ]/g,""),true);
     }
 
     let links = data._embedded.units._embedded.units[0]._embedded.sessions._embedded.sessions;
@@ -39,6 +38,9 @@ module.exports = DlPerId = (data,sub=null,fn)=>{
 
       return new Promise((resolve, reject)=> {
 
+        if(isexist){
+          resolve(key);
+        }
 
         let hashVideo = el.video_hashed_id.split(':')[1];
         let title = el.title;
@@ -55,9 +57,12 @@ module.exports = DlPerId = (data,sub=null,fn)=>{
 
         request(options, (error, response, bd) =>{
 
+          if(!isexist){
           let sources = JSON.parse(`${bd}`);
+          
+          
 
-
+          
           if(sub!=null){
             fs.writeFileSync(`./videos/${sub.replace(/[^a-zA-Z0-9 ]/g,"")}/${data.title.replace(/[^a-zA-Z0-9 ]/g,"")}/tmp/` + el.title.replace(/[^a-zA-Z0-9 ]/g,"") + '.json',bd,'utf8');
 
@@ -107,7 +112,10 @@ module.exports = DlPerId = (data,sub=null,fn)=>{
 
 
 
-
+        }
+        else{
+          resolve(key);
+        }
         })
 
       })

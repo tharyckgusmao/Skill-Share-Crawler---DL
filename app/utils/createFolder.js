@@ -15,6 +15,9 @@ module.exports = function (name,sub = null,category = null) {
 
   }
 
+  if (fs.existsSync(dir)) {
+    return 1;
+  } 
   if (!fs.existsSync(dir)){
 
     fs.mkdirSync(dir,function(err){
@@ -30,5 +33,5 @@ module.exports = function (name,sub = null,category = null) {
 
     });
   }
-
+  return 0;
 }
