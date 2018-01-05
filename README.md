@@ -20,7 +20,7 @@ Crawler with purpose to Download videos of the platform Skill Share, possibility
   Configure the Gecko Driver : https://github.com/mozilla/geckodriver/releases
 
   Firefox - Required for Captcha Authentication and Break - Tested in the Developer version and the default version
-
+  <<PLEASE USE FACEBOOK LOGIN GOOGLE CAPTACHA NOT WORK>>
 ```
 
 ### Installing
