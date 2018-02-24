@@ -86,7 +86,12 @@ module.exports = DlPerId = (data,sub=null,fn)=>{
          }
 
 
-          let rqVideo = request.get(sources.sources[1].src);
+          const videoSrc = sources.sources
+            .filter(s => s.avg_bitrate)
+            .filter(s => s.src)
+            .sort((a, b) => a.avg_bitrate < b.avg_bitrate)[0].src;
+
+          let rqVideo = request.get(videoSrc);
 
           rqVideo.pipe(out);
 

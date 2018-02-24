@@ -53,7 +53,7 @@ module.exports = Login = (cb)=> {
   }
 
   getLoginCredentials((credentials)=>{
-    let status = new Spinner(chalk.red.bold('Please wait, launching Browser, please resolve the captcha and click sign-ip for continue and wait...'));
+    let status = new Spinner(chalk.red.bold('Please wait, launching the Browser, resolve the captcha and click sign-in for continue and wait...'));
     status.start();
 
     // let profile = new firefox.Profile("./firefoxprofile/d8c394rw.crawler");
