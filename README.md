@@ -2,7 +2,7 @@
 
 ![Example Crawler](https://github.com/tharyckgusmao/Skill-Share-Crawler---DL/blob/master/imageexample.jpeg)
 
-Crawler to Download videos from the skillshare platform.
+Crawler to Download videos from the skillshare platform Suport Automatic auth and Manual.
 
 ## IMPORTANT
 
@@ -12,7 +12,13 @@ We do not support piracy !! DO NOT DISCLOSE OR SELL THE VIDEOS !!
 
 Crawler with purpose to Download videos of the platform Skill Share, possibility of download by specific id or download categories.
 
-### Prerequisites
+
+### Prerequisites for Manual Auth
+
+Check this Issue:
+https://github.com/tharyckgusmao/Skill-Share-Crawler---DL/issues/22
+
+### Prerequisites for Automatic Auth
 
 ```
   You need to authenticate at least once in the mobile app

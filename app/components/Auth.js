@@ -124,6 +124,8 @@ module.exports = Login = (cb)=> {
         driver.manage().getCookies().then((res)=>{
           let cookie = new cookieComponent;
           cookie.cookie = res;
+          cookie.provided = false;
+
           global.Cookie = cookie;
           cb();
 

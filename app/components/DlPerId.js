@@ -85,14 +85,19 @@ module.exports = DlPerId = (data,sub=null,fn)=>{
            out = fs.createWriteStream(`./videos/${data.title.replace(/[^a-zA-Z0-9 ]/g,"")}/${key}-${el.title.replace(/[^a-zA-Z0-9 ]/g,"")}.mp4`);
          }
 
+            if(sources.sources == undefined)
+            {
+                            resolve(key);
 
-          const videoSrc = sources.sources
+                
+            }
+             
+                 const videoSrc = sources.sources
             .filter(s => s.avg_bitrate)
             .filter(s => s.src)
             .sort((a, b) => a.avg_bitrate < b.avg_bitrate)[0].src;
-
           let rqVideo = request.get(videoSrc);
-
+console.log(videoSrc);
           rqVideo.pipe(out);
 
           rqVideo.on('response',  ( data )=> {
@@ -113,6 +118,11 @@ module.exports = DlPerId = (data,sub=null,fn)=>{
           });
 
 
+             
+             
+      
+         
+     
 
 
 
